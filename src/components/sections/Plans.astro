@@ -1,0 +1,411 @@
+---
+import PlanCard from "../ui/PlanCard.astro";
+---
+
+<section class="min-h-svh pt-16 space-y-8">
+    <div class="flex flex-col gap-y-4 justify-center">
+        <h2 class="text-center text-4xl text-secondary font-semibold">
+            Internet fibra óptica para tu hogar
+        </h2>
+        <span class="text-xs text-gray-500 text-center"
+            >Nuestros planes y promociones</span
+        >
+    </div>
+    <div>
+        <div class="flex items-center justify-center gap-x-8 mb-8">
+            <button
+                class="w-80 uppercase font-semibold py-1 rounded-xl text-white bg-secondary cursor-pointer"
+                >Internet</button
+            ><button
+                class="w-80 uppercase font-semibold py-1 rounded-xl text-white bg-black cursor-pointer"
+                >Dúos</button
+            >
+        </div>
+        <div class="mx-auto bg-secondary">
+            <div
+                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mx-auto container py-8 items-end w-full"
+            >
+                <PlanCard
+                    oldSpeed="500 Mbps"
+                    speed="1000 Mbps"
+                    monthsPromo="x4 meses después 500 Mbps"
+                    oldSpeedPromo="500"
+                    technology="Tecnología WiFi 5"
+                    feature="Alquiler hasta un Mesh*"
+                    price="59"
+                    totalMonths="4 meses"
+                    totalPrice="79.90"
+                />
+
+                <PlanCard
+                    recommended={true}
+                    oldSpeed="1500 Mbps"
+                    speed="2000 Mbps"
+                    monthsPromo="x4 meses después 1500 Mbps"
+                    oldSpeedPromo="1500"
+                    technology="10 GB / WiFi 6"
+                    feature="Alquiler hasta un Mesh*"
+                    price="59"
+                    totalMonths="4 meses"
+                    totalPrice="99.90"
+                />
+
+                <PlanCard
+                    oldSpeed="500 Mbps"
+                    speed="1000 Mbps"
+                    monthsPromo="x4 meses después 500 Mbps"
+                    oldSpeedPromo="500"
+                    technology="Tecnología WiFi 5"
+                    feature="Alquiler hasta un Mesh*"
+                    price="59"
+                    totalMonths="4 meses"
+                    totalPrice="79.90"
+                />
+
+                <PlanCard
+                    oldSpeed="500 Mbps"
+                    speed="1000 Mbps"
+                    monthsPromo="x4 meses después 500 Mbps"
+                    oldSpeedPromo="500"
+                    technology="Tecnología WiFi 5"
+                    feature="Alquiler hasta un Mesh*"
+                    price="59"
+                    totalMonths="4 meses"
+                    totalPrice="79.90"
+                />
+            </div>
+            <div class="mt-8 pb-8">
+                <div>
+                    <div
+                        class="flex flex-col gap-y-4 items-center text-white mb-4"
+                    >
+                        <span class="text-2xl"
+                            >*Alquiler mensual del equipo Mesh: S/1 si migras desde otro operador, o S/5 para nuevos clientes.</span
+                        >
+                        <span>Beneficios de nuestro Internet Fibra Óptica</span>
+                    </div>
+                    <div
+                        class="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 m-auto gap-8 justify-center"
+                    >
+                        <div class="flex flex-col gap-y-4 items-center">
+                            <div
+                                class="w-40 h-40 flex items-center justify-center"
+                            >
+                                <svg
+                                    viewBox="0 0 120 120"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <rect
+                                        x="30"
+                                        y="45"
+                                        width="60"
+                                        height="40"
+                                        rx="3"
+                                        stroke="white"
+                                        stroke-width="3"
+                                        fill="none"></rect>
+                                    <rect
+                                        x="35"
+                                        y="50"
+                                        width="50"
+                                        height="30"
+                                        fill="white"
+                                        opacity="0.3"></rect>
+                                    <path
+                                        d="M20 85 L25 85 L30 88 L90 88 L95 85 L100 85 L95 95 L25 95 Z"
+                                        fill="white"
+                                        stroke="white"
+                                        stroke-width="2"></path>
+                                    <g transform="translate(60, 60)">
+                                        <path
+                                            d="M-15 5 Q-15 -10, 0 -15 Q15 -10, 15 5"
+                                            stroke="white"
+                                            stroke-width="3"
+                                            fill="none"></path>
+                                        <path
+                                            d="M-10 5 Q-10 -5, 0 -8 Q10 -5, 10 5"
+                                            stroke="white"
+                                            stroke-width="3"
+                                            fill="none"></path>
+                                        <path
+                                            d="M-5 5 Q-5 0, 0 -2 Q5 0, 5 5"
+                                            stroke="white"
+                                            stroke-width="3"
+                                            fill="none"></path>
+                                    </g>
+                                    <g transform="translate(60, 68)">
+                                        <path
+                                            d="M-3 0 L0 -3 L3 0"
+                                            stroke="white"
+                                            stroke-width="2"
+                                            fill="none"></path>
+                                        <line
+                                            x1="0"
+                                            y1="-3"
+                                            x2="0"
+                                            y2="3"
+                                            stroke="white"
+                                            stroke-width="2"></line>
+                                        <path
+                                            d="M-3 6 L0 9 L3 6"
+                                            stroke="white"
+                                            stroke-width="2"
+                                            fill="none"></path>
+                                        <line
+                                            x1="0"
+                                            y1="3"
+                                            x2="0"
+                                            y2="9"
+                                            stroke="white"
+                                            stroke-width="2"></line>
+                                    </g>
+                                </svg>
+                            </div>
+                            <span class="text-2xl text-white font-bold block text-center">100% Fibra óptica</span>
+                            <span class="text-xs text-white block text-center">
+                                Experimenta una conexión sin límites con <br> el verdadero internet fibra óptica.
+                            </span>
+                        </div>
+
+                        <div class="flex flex-col gap-y-4 items-center">
+                            <div
+                                class="w-40 h-40 flex items-center justify-center"
+                            >
+                                <svg
+                                    viewBox="0 0 120 120"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <rect
+                                        x="25"
+                                        y="30"
+                                        width="45"
+                                        height="35"
+                                        rx="2"
+                                        stroke="white"
+                                        stroke-width="3"
+                                        fill="none"></rect>
+                                    <rect
+                                        x="20"
+                                        y="65"
+                                        width="55"
+                                        height="5"
+                                        rx="2"
+                                        fill="white"></rect>
+                                    <line
+                                        x1="35"
+                                        y1="70"
+                                        x2="60"
+                                        y2="70"
+                                        stroke="white"
+                                        stroke-width="4"></line>
+                                    <rect
+                                        x="78"
+                                        y="45"
+                                        width="25"
+                                        height="15"
+                                        rx="2"
+                                        stroke="white"
+                                        stroke-width="3"
+                                        fill="none"></rect>
+                                    <line
+                                        x1="82"
+                                        y1="52"
+                                        x2="98"
+                                        y2="52"
+                                        stroke="white"
+                                        stroke-width="2"></line>
+                                    <circle cx="85" cy="52" r="1.5" fill="white"
+                                    ></circle>
+                                    <circle cx="95" cy="52" r="1.5" fill="white"
+                                    ></circle>
+                                    <rect
+                                        x="88"
+                                        y="38"
+                                        width="4"
+                                        height="7"
+                                        fill="white"></rect>
+                                    <ellipse
+                                        cx="90"
+                                        cy="35"
+                                        rx="8"
+                                        ry="4"
+                                        stroke="white"
+                                        stroke-width="2"
+                                        fill="none"></ellipse>
+                                    <ellipse
+                                        cx="90"
+                                        cy="32"
+                                        rx="12"
+                                        ry="6"
+                                        stroke="white"
+                                        stroke-width="2"
+                                        fill="none"></ellipse>
+                                    <circle
+                                        cx="90"
+                                        cy="80"
+                                        r="15"
+                                        stroke="white"
+                                        stroke-width="3"
+                                        fill="none"></circle>
+                                    <ellipse
+                                        cx="90"
+                                        cy="80"
+                                        rx="6"
+                                        ry="15"
+                                        stroke="white"
+                                        stroke-width="2"
+                                        fill="none"></ellipse>
+                                    <line
+                                        x1="75"
+                                        y1="80"
+                                        x2="105"
+                                        y2="80"
+                                        stroke="white"
+                                        stroke-width="2"></line>
+                                    <circle cx="47" cy="47" r="3" fill="white"
+                                    ></circle>
+                                    <circle cx="90" cy="52" r="3" fill="white"
+                                    ></circle>
+                                    <path
+                                        d="M50 47 Q70 35, 87 50"
+                                        stroke="white"
+                                        stroke-width="2"
+                                        stroke-dasharray="2,2"
+                                        fill="none"></path>
+                                </svg>
+                            </div>
+                            <span class="text-2xl text-white font-bold block text-center">+velocidad</span>
+                            <span class="text-xs text-white block text-center">Somos el internet más rápido del Perú<div class="br"></div> Hasta 5000 Mbps de velocidad.</span>
+                        </div>
+                        <div class="flex flex-col gap-y-4 items-center">
+                            <div
+                                class="w-40 h-40 flex items-center justify-center"
+                            >
+                                <svg
+                                    viewBox="0 0 120 120"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <circle
+                                        cx="60"
+                                        cy="60"
+                                        r="45"
+                                        stroke="white"
+                                        stroke-width="4"
+                                        fill="none"></circle>
+                                    <g stroke="white" stroke-width="3">
+                                        <line x1="30" y1="60" x2="35" y2="60"
+                                        ></line>
+                                        <line x1="35" y1="35" x2="39" y2="39"
+                                        ></line>
+                                        <line x1="60" y1="20" x2="60" y2="25"
+                                        ></line>
+                                        <line x1="85" y1="35" x2="81" y2="39"
+                                        ></line>
+                                        <line x1="90" y1="60" x2="85" y2="60"
+                                        ></line>
+                                        <line x1="85" y1="85" x2="81" y2="81"
+                                        ></line>
+                                        <line x1="35" y1="85" x2="39" y2="81"
+                                        ></line>
+                                    </g>
+                                    <line
+                                        x1="60"
+                                        y1="60"
+                                        x2="80"
+                                        y2="35"
+                                        stroke="white"
+                                        stroke-width="4"
+                                        stroke-linecap="round"></line>
+                                    <circle cx="60" cy="60" r="6" fill="white"
+                                    ></circle>
+                                    <path
+                                        d="M55 75 L60 65 L58 65 L63 55 L58 65 L60 65 Z"
+                                        fill="white"></path>
+                                </svg>
+                            </div>
+                            <span class="text-2xl text-white font-bold block text-center">+estabilidad</span>
+                            <span class="text-xs text-white block text-center">Descarga, transmite y juega con el <br> internet más estable de Latinoamérica.</span>
+                        </div>
+                        <div class="flex flex-col gap-y-4 items-center">
+                            <div
+                                class="w-40 h-40 flex items-center justify-center"
+                            >
+                                <svg
+                                    viewBox="0 0 120 120"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <rect
+                                        x="35"
+                                        y="30"
+                                        width="12"
+                                        height="50"
+                                        rx="6"
+                                        stroke="white"
+                                        stroke-width="3"
+                                        fill="none"></rect>
+                                    <line
+                                        x1="41"
+                                        y1="20"
+                                        x2="41"
+                                        y2="30"
+                                        stroke="white"
+                                        stroke-width="2"></line>
+                                    <circle cx="38" cy="18" r="2" fill="white"
+                                    ></circle>
+                                    <circle cx="41" cy="14" r="2" fill="white"
+                                    ></circle>
+                                    <circle cx="44" cy="18" r="2" fill="white"
+                                    ></circle>
+                                    <rect
+                                        x="73"
+                                        y="40"
+                                        width="12"
+                                        height="40"
+                                        rx="6"
+                                        stroke="white"
+                                        stroke-width="3"
+                                        fill="none"></rect>
+                                    <line
+                                        x1="79"
+                                        y1="30"
+                                        x2="79"
+                                        y2="40"
+                                        stroke="white"
+                                        stroke-width="2"></line>
+                                    <circle cx="76" cy="28" r="2" fill="white"
+                                    ></circle>
+                                    <circle cx="79" cy="24" r="2" fill="white"
+                                    ></circle>
+                                    <circle cx="82" cy="28" r="2" fill="white"
+                                    ></circle>
+                                    <ellipse
+                                        cx="60"
+                                        cy="85"
+                                        rx="35"
+                                        ry="8"
+                                        fill="white"></ellipse>
+                                    <rect
+                                        x="25"
+                                        y="85"
+                                        width="70"
+                                        height="15"
+                                        fill="white"></rect>
+                                    <circle cx="41" cy="92" r="4" fill="#e91e8c"
+                                    ></circle>
+                                    <circle cx="79" cy="92" r="4" fill="#e91e8c"
+                                    ></circle>
+                                </svg>
+                            </div>
+                            <span class="text-2xl text-white font-bold block text-center">+conectividad</span>
+                            <span class="text-xs text-white block text-center">Conéctate en más dispositivos sin perder <br> calidad ni velocidad.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

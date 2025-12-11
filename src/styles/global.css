@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Lilex:ital,wght@0,100..700;1,100..700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+    --font-rubik: "Rubik";
+    --font-lilex: "Lilex";
+    --color-primary: #093966;
+    --color-secondary: #E81111;
+    --bg-fondo: url('img/fondo.png');
+}
