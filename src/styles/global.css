@@ -36,3 +36,41 @@ html {
 .floating-btn:hover {
     transform: scale(1.1);
 }
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-30px);
+    }
+}
+
+@keyframes signal-pulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+
+.signal-wave {
+    animation: signal-pulse 3s ease-out infinite;
+}
+
+.particle {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.2;
+    animation: float infinite ease-in-out;
+}
