@@ -4,7 +4,7 @@ import PlanCard from "../ui/PlanCard.astro";
 
 <section class="min-h-svh pt-16 space-y-8">
     <div class="flex flex-col gap-y-4 justify-center">
-        <h2 class="text-center text-4xl text-secondary font-semibold">
+        <h2 class="text-center text-xl md:text-4xl text-secondary font-semibold">
             Internet fibra óptica para tu hogar
         </h2>
         <span class="text-xs text-gray-500 text-center"
@@ -12,7 +12,7 @@ import PlanCard from "../ui/PlanCard.astro";
         >
     </div>
     <div>
-        <div class="flex items-center justify-center gap-x-8 mb-8">
+        <div class="flex items-center justify-center gap-x-8 mb-8 px-4 md:px-0">
             <button
                 class="w-80 uppercase font-semibold py-1 rounded-xl text-white bg-secondary cursor-pointer"
                 >Internet</button
@@ -23,7 +23,7 @@ import PlanCard from "../ui/PlanCard.astro";
         </div>
         <div class="mx-auto bg-secondary">
             <div
-                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mx-auto container py-8 items-end w-full"
+                class="flex flex-wrap gap-4 m-auto container py-8 items-end w-full justify-center"
             >
                 <PlanCard
                     oldSpeed="500 Mbps"
@@ -77,12 +77,12 @@ import PlanCard from "../ui/PlanCard.astro";
             <div class="mt-8 pb-8">
                 <div>
                     <div
-                        class="flex flex-col gap-y-4 items-center text-white mb-4"
+                        class="flex flex-col gap-y-4 items-center text-white mb-4 px-4 md:px-0"
                     >
-                        <span class="text-2xl"
+                        <span class="md:text-2xl"
                             >*Alquiler mensual del equipo Mesh: S/1 si migras desde otro operador, o S/5 para nuevos clientes.</span
                         >
-                        <span>Beneficios de nuestro Internet Fibra Óptica</span>
+                        <span class="text-xs md:texts-md">Beneficios de nuestro Internet Fibra Óptica</span>
                     </div>
                     <div
                         class="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 m-auto gap-8 justify-center"

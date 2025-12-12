@@ -2,62 +2,201 @@
     id="navbar"
     class="h-16 flex items-center fixed w-full z-10 transition-all duration-300"
 >
-    <div class="flex items-center justify-between container mx-auto relative px-4">
+    <div
+        class="flex items-center justify-between container mx-auto relative px-4"
+    >
         <img src="img/logo.png" alt="" class="w-10 object-contain" />
-        <div class="relative">
+
+        <button
+            id="menu-toggle"
+            class="md:hidden z-20 text-white focus:outline-none"
+        >
+            <svg
+                id="hamburger-icon"
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+            >
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+            <svg
+                id="close-icon"
+                class="w-6 h-6 hidden"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+            >
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button>
+
+        <div class="relative hidden md:block">
             <div
                 id="menu-backdrop"
                 class="absolute bg-secondary rounded-lg transition-all duration-300 ease-out pointer-events-none"
-                style="
-                    left: 0;
-                    top: 0;
-                    width: 0;
-                    height: 0;
-                    opacity: 0;
-                "
+                style="left: 0; top: 0; width: 0; height: 0; opacity: 0;"
             >
             </div>
-            <ul
-                id="menu-list"
-                class="flex items-center gap-x-6 relative z-10"
-            >
-            <li>
-                <a href="#inicio" class="menu-item font-semibold px-3 py-2 block transition-colors duration-300 text-white"
-                    >Inicio</a>
-            </li>
-            <li>
-                <a href="#nosotros" class="menu-item px-3 py-2 block transition-colors duration-300 text-white">Nosotros</a>
-            </li>
-            <li>
-                <a href="#servicios" class="menu-item px-3 py-2 block transition-colors duration-300 text-white">Servicios</a>
-            </li>
-            <li>
-                <a href="#ubicacion" class="menu-item px-3 py-2 block transition-colors duration-300 text-white">Ubicación</a>
-            </li>
-            <li>
-                <a href="#contacto" class="menu-item px-3 py-2 block transition-colors duration-300 text-white">Contacto</a>
-            </li>
+            <ul id="menu-list" class="flex items-center gap-x-6 relative z-10">
+                <li>
+                    <a
+                        href="#inicio"
+                        class="menu-item font-semibold px-3 py-2 block transition-colors duration-300 text-white"
+                        >Inicio</a>
+                </li>
+                <li>
+                    <a
+                        href="#nosotros"
+                        class="menu-item px-3 py-2 block transition-colors duration-300 text-white"
+                        >Nosotros</a>
+                </li>
+                <li>
+                    <a
+                        href="#servicios"
+                        class="menu-item px-3 py-2 block transition-colors duration-300 text-white"
+                        >Servicios</a>
+                </li>
+                <li>
+                    <a
+                        href="#ubicacion"
+                        class="menu-item px-3 py-2 block transition-colors duration-300 text-white"
+                        >Ubicación</a>
+                </li>
+                <li>
+                    <a
+                        href="#contacto"
+                        class="menu-item px-3 py-2 block transition-colors duration-300 text-white"
+                        >Contacto</a>
+                </li>
             </ul>
         </div>
     </div>
-</nav>
 
-<style>
-    html {
-        scroll-behavior: smooth;
-    }
-</style>
+    <ul
+        id="menu-list-mobile"
+        class="md:hidden fixed top-16 left-0 right-0 bg-white flex-col p-6 shadow-lg z-10 transition-all duration-300 ease-in-out opacity-0 invisible -translate-y-5 pointer-events-none"
+    >
+        <li>
+            <a
+                href="#inicio"
+                class="menu-item-mobile font-semibold px-3 py-2 block transition-colors duration-300 text-black"
+                >Inicio</a>
+        </li>
+        <li>
+            <a
+                href="#nosotros"
+                class="menu-item-mobile px-3 py-2 block transition-colors duration-300 text-black"
+                >Nosotros</a>
+        </li>
+        <li>
+            <a
+                href="#servicios"
+                class="menu-item-mobile px-3 py-2 block transition-colors duration-300 text-black"
+                >Servicios</a>
+        </li>
+        <li>
+            <a
+                href="#ubicacion"
+                class="menu-item-mobile px-3 py-2 block transition-colors duration-300 text-black"
+                >Ubicación</a>
+        </li>
+        <li>
+            <a
+                href="#contacto"
+                class="menu-item-mobile px-3 py-2 block transition-colors duration-300 text-black"
+                >Contacto</a>
+        </li>
+    </ul>
+</nav>
 
 <script is:inline>
     const navbar = document.getElementById("navbar");
     const menuBackdrop = document.getElementById("menu-backdrop");
     const menuList = document.getElementById("menu-list");
+    const menuListMobile = document.getElementById("menu-list-mobile");
     const menuItems = document.querySelectorAll("#menu-list .menu-item");
+    const menuItemsMobile = document.querySelectorAll(
+        "#menu-list-mobile .menu-item-mobile",
+    );
+    const menuToggle = document.getElementById("menu-toggle");
+    const hamburgerIcon = document.getElementById("hamburger-icon");
+    const closeIcon = document.getElementById("close-icon");
+
+    let isMenuOpen = false;
+    menuToggle.addEventListener("click", () => {
+        isMenuOpen = !isMenuOpen;
+
+        if (isMenuOpen) {
+            menuListMobile.style.display = "flex";
+            setTimeout(() => {
+                menuListMobile.classList.remove(
+                    "opacity-0",
+                    "invisible",
+                    "translate-y-[-20px]",
+                );
+                menuListMobile.classList.add(
+                    "opacity-100",
+                    "visible",
+                    "translate-y-0",
+                );
+                menuListMobile.style.pointerEvents = "auto";
+            }, 10);
+            hamburgerIcon.classList.add("hidden");
+            closeIcon.classList.remove("hidden");
+        } else {
+            menuListMobile.classList.remove(
+                "opacity-100",
+                "visible",
+                "translate-y-0",
+            );
+            menuListMobile.classList.add(
+                "opacity-0",
+                "invisible",
+                "translate-y-[-20px]",
+            );
+            menuListMobile.style.pointerEvents = "none";
+            setTimeout(() => {
+                menuListMobile.style.display = "none";
+            }, 300);
+            hamburgerIcon.classList.remove("hidden");
+            closeIcon.classList.add("hidden");
+        }
+    });
+
+    menuItemsMobile.forEach((item) => {
+        item.addEventListener("click", () => {
+            isMenuOpen = false;
+            menuListMobile.classList.remove(
+                "opacity-100",
+                "visible",
+                "translate-y-0",
+            );
+            menuListMobile.classList.add(
+                "opacity-0",
+                "invisible",
+                "translate-y-[-20px]",
+            );
+            menuListMobile.style.pointerEvents = "none";
+            setTimeout(() => {
+                menuListMobile.style.display = "none";
+            }, 300);
+            hamburgerIcon.classList.remove("hidden");
+            closeIcon.classList.add("hidden");
+        });
+    });
 
     function moveBackdrop(el) {
         const itemRect = el.getBoundingClientRect();
         const listRect = menuList.getBoundingClientRect();
-
         const left = itemRect.left - listRect.left;
         const top = itemRect.top - listRect.top;
 
@@ -69,9 +208,7 @@
     }
 
     menuItems.forEach((item) => {
-        item.addEventListener("mouseenter", () => {
-            moveBackdrop(item);
-        });
+        item.addEventListener("mouseenter", () => moveBackdrop(item));
     });
 
     menuList.addEventListener("mouseleave", () => {
@@ -82,19 +219,21 @@
         if (window.scrollY > 50) {
             navbar.classList.add("bg-white", "shadow-md");
             navbar.classList.remove("bg-transparent");
-            
             menuItems.forEach((item) => {
                 item.classList.remove("text-white");
                 item.classList.add("text-black");
             });
+            menuToggle.classList.remove("text-white");
+            menuToggle.classList.add("text-black");
         } else {
             navbar.classList.remove("bg-white", "shadow-md");
             navbar.classList.add("bg-transparent");
-            
             menuItems.forEach((item) => {
                 item.classList.remove("text-black");
                 item.classList.add("text-white");
             });
+            menuToggle.classList.remove("text-black");
+            menuToggle.classList.add("text-white");
         }
     }
 
@@ -108,21 +247,29 @@
             const sectionHeight = section.offsetHeight;
             const sectionTop = section.offsetTop - 100;
             const sectionId = section.getAttribute("id");
-            const correspondingLink = document.querySelector(`#menu-list a[href="#${sectionId}"]`);
+            const correspondingLink = document.querySelector(
+                `#menu-list a[href="#${sectionId}"]`,
+            );
+            const correspondingLinkMobile = document.querySelector(
+                `#menu-list-mobile a[href="#${sectionId}"]`,
+            );
 
             if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-                menuItems.forEach((item) => {
-                    item.classList.remove("text-secondary");
-                });
-                if (correspondingLink) {
+                menuItems.forEach((item) =>
+                    item.classList.remove("text-secondary"),
+                );
+                menuItemsMobile.forEach((item) =>
+                    item.classList.remove("text-secondary"),
+                );
+                if (correspondingLink)
                     correspondingLink.classList.add("text-secondary");
-                }
+                if (correspondingLinkMobile)
+                    correspondingLinkMobile.classList.add("text-secondary");
             }
         });
     }
 
     window.addEventListener("scroll", updateActiveLink);
-    
     handleScroll();
     updateActiveLink();
 </script>

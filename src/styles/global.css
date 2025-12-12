@@ -8,3 +8,7 @@
     --color-secondary: #E81111;
     --bg-fondo: url('img/fondo.png');
 }
+
+html {
+    scroll-behavior: smooth;
+}
