@@ -25,38 +25,57 @@ const {
 ---
 
 <div
-    class={`relative rounded-3xl overflow-hidden w-90 shadow-2xl ${
-        recommended
-            ? "bg-linear-to-b from-black to-gray-800"
-            : "bg-white"
+    class={`relative rounded-xl overflow-hidden w-90 shadow-2xl ${
+        recommended ? "bg-linear-to-b from-black to-gray-800" : "bg-white"
     }`}
 >
-    {recommended && (
-        <div class="bg-secondary rounded-t-3xl border-b-0 text-white text-center py-3 px-4  border-2 border-white">
-            <p class="text-sm font-bold">PLAN RECOMENDADO</p>
-        </div>
-    )}
-    
-    <div class={`text-center py-3 px-4 ${recommended ? 'bg-gray-900' : 'bg-gray-200'}`}>
-        <p class={`text-sm font-semibold ${recommended ? 'text-gray-300' : 'text-gray-700'}`}>
+    {
+        recommended && (
+            <div class="bg-secondary rounded-t-xl border-b-0 text-white text-center py-3 px-4 ">
+                <p class="text-sm font-bold">PLAN RECOMENDADO</p>
+            </div>
+        )
+    }
+
+    <div
+        class={`text-center py-3 px-4 ${recommended ? "bg-gray-900" : "bg-gray-200"}`}
+    >
+        <p
+            class={`text-sm font-semibold ${recommended ? "text-gray-300" : "text-gray-700"}`}
+        >
             Velocidad Contratada
         </p>
     </div>
 
-    <div class={`mx-4 mt-4 rounded-2xl p-4 shadow-lg ${
-        recommended 
-            ? 'bg-linear-to-r from-gray-700 to-gray-600' 
-            : 'bg-linear-to-r from-gray-400 to-gray-500'
-    }`}>
+    <div
+        class={`mx-4 mt-4 rounded-2xl p-4 shadow-lg ${
+            recommended
+                ? "bg-linear-to-r from-gray-700 to-gray-600"
+                : "bg-linear-to-r from-gray-400 to-gray-500"
+        }`}
+    >
         <p class="text-white text-sm font-bold mb-1">Plan desde:</p>
         <div class="flex items-end justify-center">
-            <span class="text-white text-7xl font-black leading-none">{speedFrom}</span>
+            <span class="text-white text-6xl font-black leading-none"
+                >{speedFrom}</span
+            >
             <div class="ml-2 mb-2">
-                <div class="bg-secondary text-white text-xs font-bold px-2 py-1 rounded-full">
+                <div
+                    class="bg-secondary text-white text-xs font-bold px-2 py-1 rounded-full"
+                >
                     Mbps
                 </div>
-                <svg class="w-8 h-8 mt-1 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"/>
+                <svg
+                    class="w-8 h-8 mt-1 text-white"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                >
+                    <path
+                        d="M13 10V3L4 14h7v7l9-11h-7z"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"></path>
                 </svg>
             </div>
         </div>
@@ -64,114 +83,229 @@ const {
     </div>
 
     <div class="p-4 space-y-3">
-        <div class={`rounded-xl p-4 shadow-md ${
-            recommended ? 'bg-gray-900 border border-gray-700' : 'bg-gray-50'
-        }`}>
+        <div
+            class={`rounded-xl p-4 shadow-md ${
+                recommended
+                    ? "bg-gray-900 border border-gray-700"
+                    : "bg-gray-50"
+            }`}
+        >
             <div class="flex items-center justify-between">
-                <span class={`text-lg font-bold ${recommended ? 'text-white' : 'text-gray-800'}`}>
+                <span
+                    class={`text-lg font-bold ${recommended ? "text-white" : "text-gray-800"}`}
+                >
                     Internet
                 </span>
                 <div class="flex items-baseline">
                     <span class="text-secondary text-sm font-bold">S/</span>
-                    <span class="text-secondary text-5xl font-black">{internetPrice}</span>
+                    <span class="text-secondary text-4xl font-black"
+                        >{internetPrice}</span
+                    >
                     <span class="text-secondary text-lg font-bold">.00</span>
                 </div>
             </div>
         </div>
 
-        {tvPrice && (
-            <div class={`rounded-xl p-4 shadow-md ${
-                recommended ? 'bg-gray-900 border border-gray-700' : 'bg-gray-50'
-            }`}>
-                <div class="flex items-center justify-between">
-                    <div class="flex items-center gap-2 flex-col ">
-                        <span class={`text-lg font-bold ${recommended ? 'text-white' : 'text-gray-800'}`}>
-                            Internet 
-                        </span>
-                        <span class={`${recommended ? 'text-white': 'text-black'}`}>+</span>
-                        <svg class={`w-8 h-8 ${recommended ? 'text-white' : 'text-gray-800'}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <rect x="2" y="7" width="20" height="13" rx="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M17 2l-5 5-5-5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </div>
-                    <div class="flex items-baseline">
-                        <span class="text-secondary text-sm font-bold">S/</span>
-                        <span class="text-secondary text-5xl font-black">{tvPrice}</span>
-                        <span class="text-secondary text-lg font-bold">.00</span>
+        {
+            tvPrice && (
+                <div
+                    class={`rounded-xl p-4 shadow-md ${
+                        recommended
+                            ? "bg-gray-900 border border-gray-700"
+                            : "bg-gray-50"
+                    }`}
+                >
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-2 flex-col ">
+                            <span
+                                class={`text-lg font-bold ${recommended ? "text-white" : "text-gray-800"}`}
+                            >
+                                Internet
+                            </span>
+                            <span
+                                class={`${recommended ? "text-white" : "text-black"}`}
+                            >
+                                +
+                            </span>
+                            <svg
+                                class={`w-8 h-8 ${recommended ? "text-white" : "text-gray-800"}`}
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                            >
+                                <rect
+                                    x="2"
+                                    y="7"
+                                    width="20"
+                                    height="13"
+                                    rx="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                />
+                                <path
+                                    d="M17 2l-5 5-5-5"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                />
+                            </svg>
+                        </div>
+                        <div class="flex items-baseline">
+                            <span class="text-secondary text-sm font-bold">
+                                S/
+                            </span>
+                            <span class="text-secondary text-4xl font-black">
+                                {tvPrice}
+                            </span>
+                            <span class="text-secondary text-lg font-bold">
+                                .00
+                            </span>
+                        </div>
                     </div>
                 </div>
-            </div>
-        )}
-
-        <div class={`text-center py-2 border-t border-b ${
-            recommended ? 'border-gray-700' : 'border-gray-300'
-        }`}>
-            <p class={`text-sm font-semibold ${recommended ? 'text-gray-300' : 'text-gray-700'}`}>
-                Precio Regular
-            </p>
-        </div>
+            )
+        }
 
         <div class="space-y-2">
-            {hasFiberOptic && (
-                <div class="flex items-center gap-3">
-                    <div class={`rounded-full p-2 shadow-md ${
-                        recommended ? 'bg-gray-900 border border-gray-700' : 'bg-white'
-                    }`}>
-                        <svg class={`w-8 h-8 ${recommended ? 'text-white' : 'text-gray-800'}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M12 2L2 7l10 5 10-5-10-5z" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M2 17l10 5 10-5" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M2 12l10 5 10-5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
+            {
+                hasFiberOptic && (
+                    <div class="flex items-center gap-3">
+                        <div
+                            class={`rounded-full p-2 shadow-md ${
+                                recommended
+                                    ? "bg-gray-900 border border-gray-700"
+                                    : "bg-white"
+                            }`}
+                        >
+                            <svg
+                                class={`w-8 h-8 ${recommended ? "text-white" : "text-gray-800"}`}
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                            >
+                                <path
+                                    d="M12 2L2 7l10 5 10-5-10-5z"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                />
+                                <path
+                                    d="M2 17l10 5 10-5"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                />
+                                <path
+                                    d="M2 12l10 5 10-5"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                />
+                            </svg>
+                        </div>
+                        <span
+                            class={`text-sm font-bold ${recommended ? "text-white" : "text-gray-800"}`}
+                        >
+                            100% Fibra Óptica
+                        </span>
                     </div>
-                    <span class={`text-sm font-bold ${recommended ? 'text-white' : 'text-gray-800'}`}>
-                        100% Fibra Óptica
-                    </span>
-                </div>
-            )}
+                )
+            }
 
-            {hasUnlimitedDevices && (
-                <div class="flex items-center gap-3">
-                    <div class={`rounded-full p-2 shadow-md ${
-                        recommended ? 'bg-gray-900 border border-gray-700' : 'bg-white'
-                    }`}>
-                        <svg class={`w-8 h-8 ${recommended ? 'text-white' : 'text-gray-800'}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <rect x="2" y="3" width="20" height="14" rx="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M8 21h8" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M12 17v4" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
+            {
+                hasUnlimitedDevices && (
+                    <div class="flex items-center gap-3">
+                        <div
+                            class={`rounded-full p-2 shadow-md ${
+                                recommended
+                                    ? "bg-gray-900 border border-gray-700"
+                                    : "bg-white"
+                            }`}
+                        >
+                            <svg
+                                class={`w-8 h-8 ${recommended ? "text-white" : "text-gray-800"}`}
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                            >
+                                <rect
+                                    x="2"
+                                    y="3"
+                                    width="20"
+                                    height="14"
+                                    rx="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                />
+                                <path
+                                    d="M8 21h8"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                />
+                                <path
+                                    d="M12 17v4"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                />
+                            </svg>
+                        </div>
+                        <span
+                            class={`text-sm font-bold ${recommended ? "text-white" : "text-gray-800"}`}
+                        >
+                            Internet ilimitado en
+                            <br />
+                            todos los dispositivos
+                        </span>
                     </div>
-                    <span class={`text-sm font-bold ${recommended ? 'text-white' : 'text-gray-800'}`}>
-                        Internet ilimitado en<br/>todos los dispositivos
-                    </span>
-                </div>
-            )}
+                )
+            }
         </div>
 
-        {hasLimitedSpeed && (
-            <div class="bg-linear-to-r from-blue-800 to-blue-900 text-white rounded-xl p-3 flex items-center justify-between shadow-md">
-                <span class="text-sm font-bold">VELOCIDAD<br/>LIMITADA</span>
-                <svg class="w-10 h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="12" cy="12" r="10"/>
-                    <path d="M8 12h8" stroke-linecap="round"/>
-                    <path d="M12 8v8" stroke-linecap="round"/>
-                </svg>
-            </div>
-        )}
+        {
+            hasLimitedSpeed && (
+                <div class="bg-linear-to-r from-blue-800 to-blue-900 text-white rounded-xl p-3 flex items-center justify-between shadow-md">
+                    <span class="text-sm font-bold">
+                        VELOCIDAD
+                        <br />
+                        LIMITADA
+                    </span>
+                    <svg
+                        class="w-10 h-10"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                    >
+                        <circle cx="12" cy="12" r="10" />
+                        <path d="M8 12h8" stroke-linecap="round" />
+                        <path d="M12 8v8" stroke-linecap="round" />
+                    </svg>
+                </div>
+            )
+        }
 
-        {installationFree && (
-            <div class="bg-linear-to-r from-yellow-300 to-yellow-400 text-center py-4 rounded-xl shadow-md">
-                <p class="text-xl font-black text-gray-800">¡INSTALACIÓN GRATIS!</p>
-            </div>
-        )}
+        {
+            installationFree && (
+                <div class="bg-secondary text-center py-2 rounded-xl shadow-md">
+                    <p class="text-xl font-black text-white">
+                        ¡INSTALACIÓN GRATIS!
+                    </p>
+                </div>
+            )
+        }
 
-        <button
-            class={`w-full font-bold py-4 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105 ${
-                recommended
-                    ? 'bg-linear-to-r from-gray-700 to-gray-600 text-white hover:from-gray-600 hover:to-gray-500'
-                    : 'bg-linear-to-r from-gray-500 to-gray-400 text-white hover:from-gray-600 hover:to-gray-500'
-            }`}
-        >
-            Quiero este plan
+        <button class="flex w-full h-full">
+            <a
+                href="https://wa.me/51946759827?text=Quiero%20este%20plan"
+                target="_blank"
+                rel="noopener noreferrer"
+                class={`w-full font-bold py-4 shadow-lg transition-all duration-300 transform hover:scale-105 text-center ${
+                    recommended
+                        ? "bg-linear-to-r from-gray-700 to-gray-600 text-white hover:from-gray-600 hover:to-gray-500"
+                        : "bg-linear-to-r from-gray-500 to-gray-400 text-white hover:from-gray-600 hover:to-gray-500"
+                }`}
+            >
+                Quiero este plan
+            </a>
         </button>
     </div>
 </div>
