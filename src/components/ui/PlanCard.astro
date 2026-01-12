@@ -25,7 +25,7 @@ const {
 ---
 
 <div
-    class={`relative rounded-xl overflow-hidden w-90 shadow-2xl ${
+    class={`relative rounded-xl overflow-hidden w-85 shadow-2xl ${
         recommended ? "bg-linear-to-b from-black to-gray-800" : "bg-white"
     }`}
 >
@@ -56,7 +56,7 @@ const {
     >
         <p class="text-white text-sm font-bold mb-1">Plan desde:</p>
         <div class="flex items-end justify-center">
-            <span class="text-white text-6xl font-black leading-none"
+            <span class="text-white text-4xl font-black leading-none"
                 >{speedFrom}</span
             >
             <div class="ml-2 mb-2">
@@ -66,7 +66,7 @@ const {
                     Mbps
                 </div>
                 <svg
-                    class="w-8 h-8 mt-1 text-white"
+                    class="w-5 h-5 mt-1 text-white"
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
@@ -92,7 +92,7 @@ const {
         >
             <div class="flex items-center justify-between">
                 <span
-                    class={`text-lg font-bold ${recommended ? "text-white" : "text-gray-800"}`}
+                    class={`font-bold ${recommended ? "text-white" : "text-gray-800"}`}
                 >
                     Internet
                 </span>
@@ -118,7 +118,7 @@ const {
                     <div class="flex items-center justify-between">
                         <div class="flex items-center gap-2 ">
                             <span
-                                class={`text-lg font-bold ${recommended ? "text-white" : "text-gray-800"}`}
+                                class={` font-bold ${recommended ? "text-white" : "text-gray-800"}`}
                             >
                                 Internet
                             </span>
@@ -128,7 +128,7 @@ const {
                                 +
                             </span>
                             <svg
-                                class={`w-8 h-8 ${recommended ? "text-white" : "text-gray-800"}`}
+                                class={`w-6 h-6 ${recommended ? "text-white" : "text-gray-800"}`}
                                 viewBox="0 0 24 24"
                                 fill="none"
                                 stroke="currentColor"
@@ -178,7 +178,7 @@ const {
                             }`}
                         >
                             <svg
-                                class={`w-8 h-8 ${recommended ? "text-white" : "text-gray-800"}`}
+                                class={`w-6 h-6 ${recommended ? "text-white" : "text-gray-800"}`}
                                 viewBox="0 0 24 24"
                                 fill="none"
                                 stroke="currentColor"
@@ -221,7 +221,7 @@ const {
                             }`}
                         >
                             <svg
-                                class={`w-8 h-8 ${recommended ? "text-white" : "text-gray-800"}`}
+                                class={`w-6 h-6 ${recommended ? "text-white" : "text-gray-800"}`}
                                 viewBox="0 0 24 24"
                                 fill="none"
                                 stroke="currentColor"
@@ -269,7 +269,7 @@ const {
                         LIMITADA
                     </span>
                     <svg
-                        class="w-10 h-10"
+                        class="w-6 h-6"
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
@@ -286,7 +286,7 @@ const {
         {
             installationFree && (
                 <div class="bg-secondary text-center py-2 rounded-xl shadow-md">
-                    <p class="text-xl font-black text-white">
+                    <p class="font-semibold text-white">
                         ¡INSTALACIÓN GRATIS!
                     </p>
                 </div>
