@@ -1,151 +1,174 @@
 ---
 interface Props {
     recommended?: boolean;
-    oldSpeed?: string;
-    speed: string;
-    monthsPromo: string;
-    oldSpeedPromo: string;
-    technology: string;
-    feature: string;
-    price: string;
-    totalMonths: string;
-    totalPrice: string;
+    speedFrom?: string;
+    internetPrice: string;
+    tvPrice?: string;
+    regularPrice: string;
+    hasFiberOptic?: boolean;
+    hasUnlimitedDevices?: boolean;
+    hasLimitedSpeed?: boolean;
+    installationFree?: boolean;
 }
 
 const {
     recommended = false,
-    oldSpeed,
-    speed,
-    monthsPromo,
-    oldSpeedPromo,
-    technology,
-    feature,
-    price,
-    totalMonths,
-    totalPrice,
+    speedFrom = "200",
+    internetPrice,
+    tvPrice,
+    regularPrice,
+    hasFiberOptic = true,
+    hasUnlimitedDevices = true,
+    hasLimitedSpeed = false,
+    installationFree = true,
 } = Astro.props;
 ---
 
 <div
-    class={`relative rounded-3xl shadow-black overflow-hidden w-75 shadow-xl ${
+    class={`relative rounded-3xl overflow-hidden w-90 shadow-2xl ${
         recommended
-            ? "bg-linear-to-b from-black to-gray-800 text-white"
-            : "bg-white text-gray-800"
+            ? "bg-linear-to-b from-black to-gray-800"
+            : "bg-white"
     }`}
 >
-    {
-        recommended && (
-            <div class=" text-secondary text-center py-2 font-bold text-sm">
-                PLAN RECOMENDADO
-            </div>
-        )
-    }
+    {recommended && (
+        <div class="bg-secondary rounded-t-3xl border-b-0 text-white text-center py-3 px-4  border-2 border-white">
+            <p class="text-sm font-bold">PLAN RECOMENDADO</p>
+        </div>
+    )}
+    
+    <div class={`text-center py-3 px-4 ${recommended ? 'bg-gray-900' : 'bg-gray-200'}`}>
+        <p class={`text-sm font-semibold ${recommended ? 'text-gray-300' : 'text-gray-700'}`}>
+            Velocidad Contratada
+        </p>
+    </div>
 
-    <div class="p-6">
-        {
-            oldSpeed && (
-                <p
-                    class={`text-sm line-through block text-center ${
-                        recommended ? "text-gray-400" : "text-gray-500"
-                    }`}
-                >
-                    {oldSpeed}
-                </p>
-            )
-        }
-        <h2 class="text-xl font-bold mb-2 text-center">{speed}</h2>
-        <span
-            class={`block text-center px-3 py-1 rounded-full text-xs font-semibold mb-2 ${
-                recommended
-                    ? "bg-gray-700 text-white"
-                    : "bg-gray-300 text-gray-700"
-            }`}
-        >
-            {monthsPromo}
-        </span>
-        <p
-            class={`text-sm mb-6 block text-center ${
-                recommended ? "text-gray-300" : "text-gray-600"
-            }`}
-        >
-            INTERNET 100% FIBRA ÓPTICA
-        </p>
-        <div
-            class={`rounded-full w-32 h-32 mx-auto mb-4 flex items-center justify-center ${
-                recommended ? "bg-gray-900" : "bg-gray-100"
-            }`}
-        >
-            <svg
-                class={`w-20 h-20 ${
-                    recommended ? "stroke-white" : "stroke-gray-800"
-                }`}
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-            >
-                <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12"
-                ></path>
-            </svg>
+    <div class={`mx-4 mt-4 rounded-2xl p-4 shadow-lg ${
+        recommended 
+            ? 'bg-linear-to-r from-gray-700 to-gray-600' 
+            : 'bg-linear-to-r from-gray-400 to-gray-500'
+    }`}>
+        <p class="text-white text-sm font-bold mb-1">Plan desde:</p>
+        <div class="flex items-end justify-center">
+            <span class="text-white text-7xl font-black leading-none">{speedFrom}</span>
+            <div class="ml-2 mb-2">
+                <div class="bg-secondary text-white text-xs font-bold px-2 py-1 rounded-full">
+                    Mbps
+                </div>
+                <svg class="w-8 h-8 mt-1 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
         </div>
-        <div class="text-center mb-6">
-            <p
-                class={`text-sm font-medium ${
-                    recommended ? "text-gray-300" : "text-gray-600"
-                }`}
-            >
-                {technology}
+        <p class="text-white text-xs mt-1 text-center">De Velocidad</p>
+    </div>
+
+    <div class="p-4 space-y-3">
+        <div class={`rounded-xl p-4 shadow-md ${
+            recommended ? 'bg-gray-900 border border-gray-700' : 'bg-gray-50'
+        }`}>
+            <div class="flex items-center justify-between">
+                <span class={`text-lg font-bold ${recommended ? 'text-white' : 'text-gray-800'}`}>
+                    Internet
+                </span>
+                <div class="flex items-baseline">
+                    <span class="text-secondary text-sm font-bold">S/</span>
+                    <span class="text-secondary text-5xl font-black">{internetPrice}</span>
+                    <span class="text-secondary text-lg font-bold">.00</span>
+                </div>
+            </div>
+        </div>
+
+        {tvPrice && (
+            <div class={`rounded-xl p-4 shadow-md ${
+                recommended ? 'bg-gray-900 border border-gray-700' : 'bg-gray-50'
+            }`}>
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-2 flex-col ">
+                        <span class={`text-lg font-bold ${recommended ? 'text-white' : 'text-gray-800'}`}>
+                            Internet 
+                        </span>
+                        <span class={`${recommended ? 'text-white': 'text-black'}`}>+</span>
+                        <svg class={`w-8 h-8 ${recommended ? 'text-white' : 'text-gray-800'}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="7" width="20" height="13" rx="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M17 2l-5 5-5-5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="flex items-baseline">
+                        <span class="text-secondary text-sm font-bold">S/</span>
+                        <span class="text-secondary text-5xl font-black">{tvPrice}</span>
+                        <span class="text-secondary text-lg font-bold">.00</span>
+                    </div>
+                </div>
+            </div>
+        )}
+
+        <div class={`text-center py-2 border-t border-b ${
+            recommended ? 'border-gray-700' : 'border-gray-300'
+        }`}>
+            <p class={`text-sm font-semibold ${recommended ? 'text-gray-300' : 'text-gray-700'}`}>
+                Precio Regular
             </p>
-            <p
-                class={`text-sm ${
-                    recommended ? "text-gray-400" : "text-gray-500"
-                }`}
-            >
-                {feature}
-            </p>
         </div>
-        {
-            recommended && (
-                <hr class="border-gray-700 mb-6" />
-            )
-        }
-        <div class="text-center mb-4">
-            <span
-                class={`text-2xl ${
-                    recommended ? "text-secondary" : "text-gray-800"
-                }`}
-            >
-                s/
-            </span>
-            <span
-                class={`text-6xl font-bold ${
-                    recommended ? "text-secondary" : "text-secondary"
-                }`}
-            >
-                {price}
-            </span>
-            <span
-                class={`text-2xl ${
-                    recommended ? "text-secondary" : "text-secondary"
-                }`}
-            >
-                .90
-            </span>
+
+        <div class="space-y-2">
+            {hasFiberOptic && (
+                <div class="flex items-center gap-3">
+                    <div class={`rounded-full p-2 shadow-md ${
+                        recommended ? 'bg-gray-900 border border-gray-700' : 'bg-white'
+                    }`}>
+                        <svg class={`w-8 h-8 ${recommended ? 'text-white' : 'text-gray-800'}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M2 17l10 5 10-5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M2 12l10 5 10-5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <span class={`text-sm font-bold ${recommended ? 'text-white' : 'text-gray-800'}`}>
+                        100% Fibra Óptica
+                    </span>
+                </div>
+            )}
+
+            {hasUnlimitedDevices && (
+                <div class="flex items-center gap-3">
+                    <div class={`rounded-full p-2 shadow-md ${
+                        recommended ? 'bg-gray-900 border border-gray-700' : 'bg-white'
+                    }`}>
+                        <svg class={`w-8 h-8 ${recommended ? 'text-white' : 'text-gray-800'}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="3" width="20" height="14" rx="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M8 21h8" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M12 17v4" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <span class={`text-sm font-bold ${recommended ? 'text-white' : 'text-gray-800'}`}>
+                        Internet ilimitado en<br/>todos los dispositivos
+                    </span>
+                </div>
+            )}
         </div>
-        <p
-            class={`text-center text-sm mb-6 ${
-                recommended ? "text-gray-400" : "text-gray-500"
-            }`}
-        >
-            X {totalMonths}. Después S/{totalPrice}
-        </p>
+
+        {hasLimitedSpeed && (
+            <div class="bg-linear-to-r from-blue-800 to-blue-900 text-white rounded-xl p-3 flex items-center justify-between shadow-md">
+                <span class="text-sm font-bold">VELOCIDAD<br/>LIMITADA</span>
+                <svg class="w-10 h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <path d="M8 12h8" stroke-linecap="round"/>
+                    <path d="M12 8v8" stroke-linecap="round"/>
+                </svg>
+            </div>
+        )}
+
+        {installationFree && (
+            <div class="bg-linear-to-r from-yellow-300 to-yellow-400 text-center py-4 rounded-xl shadow-md">
+                <p class="text-xl font-black text-gray-800">¡INSTALACIÓN GRATIS!</p>
+            </div>
+        )}
+
         <button
-            class={`w-full py-3 rounded-full font-semibold transition-all shadow-xl duration-300 ${
+            class={`w-full font-bold py-4 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105 ${
                 recommended
-                    ? "bg-linear-to-r from-gray-700 to-gray-600 text-white hover:from-gray-600 hover:to-gray-500"
-                    : "bg-linear-to-r from-gray-500 to-gray-400 text-white hover:from-gray-600 hover:to-gray-500"
+                    ? 'bg-linear-to-r from-gray-700 to-gray-600 text-white hover:from-gray-600 hover:to-gray-500'
+                    : 'bg-linear-to-r from-gray-500 to-gray-400 text-white hover:from-gray-600 hover:to-gray-500'
             }`}
         >
             Quiero este plan
