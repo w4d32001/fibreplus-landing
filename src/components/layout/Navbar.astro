@@ -74,21 +74,22 @@
                 href="https://wa.me/51946759827"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="w-full bg-linear-to-r from-green-500 to-green-600 text-white px-6 py-2 rounded-xl font-semibold transition-all duration-300 hover:shadow-xl hover:scale-105 flex items-center justify-center gap-2"
+                class="w-full bg-green-500 hover:bg-green-600 text-white px-6 py-2.5 rounded-xl font-semibold transition-all duration-300 hover:shadow-lg hover:scale-[1.03] flex items-center justify-center gap-2 group pulse-contact"
             >
-                Contáctanos
                 <svg
-                    class="w-4 h-4"
-                    fill="none"
-                    stroke="currentColor"
+                    class="w-5 h-5"
+                    fill="currentColor"
                     viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
                 >
                     <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.247-.595-.497-.52-.67.075-.173.595-.669 2.058-.817 2.257-.149.198-.298.223-.595.074-.297-.149-1.775-.865-2.023-.989-.248-.124-.434-.086-.595.087-.16.173-.669 2.34-.2 4.834.387 2.073 1.676 3.227 2.845 3.795 3.61.967 6.417.347 7.378-.298.96-.644 1.676-3.64 1.428-4.634-.247-.993-.247-.993-.544-.868z"
+                    ></path>
+                    <path
+                        d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 18c-4.418 0-8-3.582-8-8s3.582-8 8-8 8 3.582 8 8-3.582 8-8 8z"
+                    ></path>
                 </svg>
+                <span>Contáctanos</span>
             </a>
         </div>
         <button
@@ -240,21 +241,9 @@
                 href="https://wa.me/51946759827"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="w-full bg-linear-to-r from-green-500 to-green-600 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 hover:shadow-xl hover:scale-105 flex items-center justify-center gap-2"
+                class="w-full bg-secondary text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 hover:shadow-xl hover:scale-105 flex items-center justify-center gap-2"
             >
                 Contáctanos
-                <svg
-                    class="w-4 h-4"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                >
-                    <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
-                </svg>
             </a>
         </div>
     </div>
@@ -493,5 +482,21 @@
 
     #menu-list-mobile {
         max-width: calc(100vw - 2rem);
+    }
+
+    .pulse-contact {
+        animation: pulseContact 2s infinite;
+    }
+
+    @keyframes pulseContact {
+        0% {
+            box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4);
+        }
+        70% {
+            box-shadow: 0 0 0 20px rgba(34, 197, 94, 0);
+        }
+        100% {
+            box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+        }
     }
 </style>
